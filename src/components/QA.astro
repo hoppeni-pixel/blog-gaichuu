@@ -1,0 +1,18 @@
+---
+interface Props {
+  question: string;
+  answer: string;
+}
+const { question, answer } = Astro.props;
+---
+
+<div class="qa-block">
+  <div class="qa-question">
+    <span class="qa-icon">🙋</span>
+    <p>{question}</p>
+  </div>
+  <div class="qa-answer">
+    <span class="qa-icon">✅</span>
+    <p>{answer}</p>
+  </div>
+</div>

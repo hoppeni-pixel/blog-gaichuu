@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="ja">
+	<head>
+		<BaseHead title={`記事一覧 | ${SITE_TITLE}`} description="副業・節約・お金に関する記事の一覧です。" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1 style="font-size:1.5em;margin-bottom:1.5em;">📝 記事一覧</h1>
+			<div class="article-grid">
+				{posts.map(post => (
+					<a href={`/blog/${post.id}/`} class="article-card" style="text-decoration:none;color:inherit;">
+						{post.data.heroImage && (
+							<img
+								class="article-card-img"
+								src={post.data.heroImage.src}
+								alt={post.data.title}
+								loading="lazy"
+							/>
+						)}
+						<div class="article-card-body">
+							{post.data.category && (
+								<span class="category-badge">{post.data.category}</span>
+							)}
+							{post.data.isPillar && (
+								<span class="pillar-badge">まとめ</span>
+							)}
+							<div class="article-card-title">{post.data.title}</div>
+							<div class="article-card-desc">{post.data.description}</div>
+							<div class="article-card-date">
+								<FormattedDate date={post.data.pubDate} />
+							</div>
+						</div>
+					</a>
+				))}
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

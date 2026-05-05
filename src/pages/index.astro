@@ -1,0 +1,97 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, CATEGORIES } from '../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const allPosts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const recentPosts = allPosts.slice(0, 6);
+const pillarPosts = allPosts.filter(p => p.data.isPillar);
+---
+
+<!doctype html>
+<html lang="ja">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="hero">
+				<h1>害虫・害獣でお困りですか？<br />今すぐ無料で解決策を確認</h1>
+				<p>ハチ・ねずみ・シロアリ・ゴキブリなど、あらゆる害虫・害獣の駆除費用・業者選び・DIY対策をわかりやすく解説</p>
+				<a href="tel:0120-000-000" class="cta-button-hero">🐝 今すぐ無料相談する（24時間対応）</a>
+			</div>
+
+			{pillarPosts.length > 0 && (
+				<>
+					<h2 class="section-title">📌 まとめ記事・完全ガイド</h2>
+					<div class="article-grid">
+						{pillarPosts.map(post => (
+							<a href={`/blog/${post.id}/`} class="article-card" style="text-decoration:none;color:inherit;">
+								{post.data.heroImage && (
+									<img
+										class="article-card-img"
+										src={post.data.heroImage.src}
+										alt={post.data.title}
+										loading="lazy"
+									/>
+								)}
+								<div class="article-card-body">
+									{post.data.category && (
+										<span class="category-badge">{post.data.category}</span>
+									)}
+									<div class="article-card-title">{post.data.title}</div>
+									<div class="article-card-desc">{post.data.description}</div>
+									<div class="article-card-date">
+										<FormattedDate date={post.data.pubDate} />
+									</div>
+								</div>
+							</a>
+						))}
+					</div>
+				</>
+			)}
+
+			<h2 class="section-title">📝 最新記事</h2>
+			<div class="article-grid">
+				{recentPosts.map(post => (
+					<a href={`/blog/${post.id}/`} class="article-card" style="text-decoration:none;color:inherit;">
+						{post.data.heroImage && (
+							<img
+								class="article-card-img"
+								src={post.data.heroImage.src}
+								alt={post.data.title}
+								loading="lazy"
+							/>
+						)}
+						<div class="article-card-body">
+							{post.data.category && (
+								<span class="category-badge">{post.data.category}</span>
+							)}
+							<div class="article-card-title">{post.data.title}</div>
+							<div class="article-card-desc">{post.data.description}</div>
+							<div class="article-card-date">
+								<FormattedDate date={post.data.pubDate} />
+							</div>
+						</div>
+					</a>
+				))}
+			</div>
+
+			<h2 class="section-title">🗂️ カテゴリーから探す</h2>
+			<div style="display:flex;gap:0.8em;flex-wrap:wrap;margin-bottom:2em;">
+				{CATEGORIES.map(cat => (
+					<a href={`/category/${cat.slug}/`} class="category-badge" style="font-size:1em;padding:8px 20px;">
+						{cat.label}
+					</a>
+				))}
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

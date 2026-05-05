@@ -1,0 +1,32 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="ja">
+	<head>
+		<BaseHead title={`運営者情報 | ${SITE_TITLE}`} description="害虫・害獣駆除ナビの運営者情報です。" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>運営者情報</h1>
+			<table>
+				<tbody>
+					<tr><th>サイト名</th><td>{SITE_TITLE}</td></tr>
+					<tr><th>運営者</th><td>（お名前）</td></tr>
+					<tr><th>設立</th><td>2026年</td></tr>
+					<tr><th>目的</th><td>害虫・害獣駆除に関する情報提供</td></tr>
+				</tbody>
+			</table>
+			<h2>当サイトについて</h2>
+			<p>当サイトは、ハチ・ねずみ・シロアリ・ゴキブリなど害虫・害獣でお困りの方へ向けて、駆除費用・業者選び・DIY対策の情報を中立的な立場で発信するメディアです。掲載情報は可能な限り正確を期しておりますが、最新情報は各公式サイトにてご確認ください。</p>
+			<h2>アフィリエイトについて</h2>
+			<p>当サイトはアフィリエイトプログラムに参加しており、商品・サービスの紹介によって広告収入を得る場合があります。</p>
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,31 @@
+---
+import { SITE_TITLE, CATEGORIES } from '../consts';
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header">
+	<div class="header-inner">
+		<a href="/" class="site-logo">
+			🐛 <span>{SITE_TITLE}</span>
+		</a>
+		<nav>
+			<ul class="header-nav">
+				{CATEGORIES.slice(0, 3).map(cat => (
+					<li>
+						<a
+							href={`/category/${cat.slug}/`}
+							class={currentPath.includes(cat.slug) ? 'active' : ''}
+						>
+							{cat.label}
+						</a>
+					</li>
+				))}
+				<li>
+					<a href="/blog/" class={currentPath.startsWith('/blog') ? 'active' : ''}>
+						記事一覧
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
