@@ -4,13 +4,13 @@ import { z } from 'astro/zod';
 
 const blog = defineCollection({
 	loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
-	schema: ({ image }) =>
+	schema: () =>
 		z.object({
 			title: z.string(),
 			description: z.string(),
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
-			heroImage: z.optional(image()),
+			heroImage: z.string().optional(),
 			category: z.string().default('未分類'),
 			tags: z.array(z.string()).default([]),
 			author: z.string().default('マネーラボ編集部'),

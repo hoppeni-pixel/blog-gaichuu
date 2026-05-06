@@ -26,7 +26,7 @@ const posts = (await getCollection('blog')).sort(
 						{post.data.heroImage && (
 							<img
 								class="article-card-img"
-								src={post.data.heroImage.src}
+								src={post.data.heroImage}
 								alt={post.data.title}
 								loading="lazy"
 							/>
