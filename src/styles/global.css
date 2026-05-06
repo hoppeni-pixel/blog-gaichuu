@@ -537,6 +537,90 @@ li {
 	line-height: 1.7;
 }
 
+/* ===== Table of Contents ===== */
+.toc-box {
+	background: #f0f7f0;
+	border: 1px solid #c8e6c9;
+	border-radius: var(--border-radius);
+	padding: 1.2em 1.5em;
+	margin: 1.5em 0;
+}
+.toc-title {
+	font-weight: 700;
+	margin-bottom: 0.6em;
+	font-size: 0.95em;
+}
+.toc-list {
+	margin: 0;
+	padding-left: 1.4em;
+	display: flex;
+	flex-direction: column;
+	gap: 0.4em;
+}
+.toc-list li {
+	font-size: 0.9em;
+}
+.toc-list a {
+	color: var(--accent);
+	text-decoration: none;
+}
+.toc-list a:hover {
+	text-decoration: underline;
+}
+
+/* ===== Chat Balloon (主夫 × 業者) ===== */
+.chat-block {
+	margin: 2em 0;
+	display: flex;
+	flex-direction: column;
+	gap: 1.2em;
+}
+.chat-row {
+	display: flex;
+	align-items: flex-end;
+	gap: 0.7em;
+}
+.chat-row.right {
+	flex-direction: row-reverse;
+}
+.chat-avatar {
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.6em;
+	flex-shrink: 0;
+	background: #e8f5e9;
+	border: 2px solid #c8e6c9;
+}
+.chat-row.right .chat-avatar {
+	background: #fff3e0;
+	border-color: #ffe0b2;
+}
+.chat-name {
+	font-size: 0.7em;
+	text-align: center;
+	color: rgb(var(--gray));
+	margin-top: 0.3em;
+}
+.chat-bubble {
+	background: #e8f5e9;
+	border-radius: 0 16px 16px 16px;
+	padding: 0.85em 1.1em;
+	font-size: 0.92em;
+	line-height: 1.7;
+	max-width: 78%;
+	border: 1px solid #c8e6c9;
+}
+.chat-row.right .chat-bubble {
+	background: #fff3e0;
+	border-radius: 16px 0 16px 16px;
+	border-color: #ffe0b2;
+}
+
 /* ===== CTA Button variants (A/B) ===== */
 .cta-btn-a {
 	display: inline-block;
