@@ -1,12 +1,11 @@
 ---
 import '../styles/global.css';
-import type { ImageMetadata } from 'astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 interface Props {
 	title: string;
 	description: string;
-	image?: ImageMetadata;
+	image?: string;
 	type?: 'website' | 'article';
 	pubDate?: Date;
 	updatedDate?: Date;
@@ -15,7 +14,7 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description, image, type = 'website', pubDate, updatedDate, author } = Astro.props;
-const ogImage = image ? new URL(image.src, Astro.url) : new URL('/og-default.png', Astro.site);
+const ogImage = image ? new URL(image, Astro.url) : new URL('/og-default.png', Astro.site);
 const fullTitle = title === SITE_TITLE ? title : `${title} | ${SITE_TITLE}`;
 
 const articleSchema = type === 'article' ? {

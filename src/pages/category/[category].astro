@@ -1,0 +1,163 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { CATEGORIES, SITE_TITLE } from '../../consts';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+  return CATEGORIES.map(cat => {
+    const posts = allPosts
+      .filter(p => p.data.category === cat.label)
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+    return {
+      params: { category: cat.slug },
+      props: { cat, posts },
+    };
+  });
+}
+
+const { cat, posts } = Astro.props;
+---
+
+<html lang="ja">
+  <head>
+    <BaseHead
+      title={`${cat.label}の記事一覧`}
+      description={`${cat.label}に関する費用・業者選び・DIY対策の記事一覧です。`}
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <nav class="breadcrumb" aria-label="パンくずリスト">
+        <a href="/">ホーム</a>
+        <span class="sep">›</span>
+        <span>{cat.label}</span>
+      </nav>
+
+      <div class="category-header">
+        <h1>{cat.label}の記事一覧</h1>
+        <p>{posts.length}件の記事</p>
+      </div>
+
+      {posts.length === 0 ? (
+        <p class="no-posts">現在この카テゴリの記事はありません。</p>
+      ) : (
+        <ul class="post-list">
+          {posts.map(post => (
+            <li class="post-card">
+              {post.data.heroImage && (
+                <a href={`/blog/${post.id}/`}>
+                  <img
+                    src={post.data.heroImage}
+                    alt={post.data.title}
+                    class="post-thumb"
+                  />
+                </a>
+              )}
+              <div class="post-card-body">
+                <a href={`/category/${cat.slug}/`} class="category-badge">{cat.label}</a>
+                <h2 class="post-card-title">
+                  <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+                </h2>
+                <p class="post-card-desc">{post.data.description}</p>
+                <span class="post-date">
+                  {post.data.pubDate.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .category-header {
+    padding: 2rem 1rem 1rem;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 2rem;
+  }
+  .category-header h1 {
+    font-size: 1.8rem;
+    color: var(--accent-dark);
+    margin: 0 0 0.25rem;
+  }
+  .category-header p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  .no-posts {
+    text-align: center;
+    color: #666;
+    padding: 3rem;
+  }
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .post-card {
+    display: flex;
+    gap: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .post-thumb {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .post-card-body {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .post-card-title {
+    font-size: 1rem;
+    margin: 0;
+  }
+  .post-card-title a {
+    color: var(--accent-dark);
+    text-decoration: none;
+  }
+  .post-card-title a:hover {
+    text-decoration: underline;
+  }
+  .post-card-desc {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .post-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: auto;
+  }
+  @media (max-width: 600px) {
+    .post-card {
+      flex-direction: column;
+    }
+    .post-thumb {
+      width: 100%;
+      height: 160px;
+    }
+  }
+</style>
