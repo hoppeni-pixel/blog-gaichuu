@@ -73,6 +73,33 @@ const updatedDateStr = updatedDate?.toLocaleDateString('ja-JP', { year: 'numeric
 					<slot />
 				</div>
 
+				<!-- アフィリエイトCTA（記事末尾） -->
+				{category === 'シロアリ駆除' ? (
+					<div class="affiliate-box">
+						<p class="affiliate-lead">🏠 シロアリの被害が心配な方へ。まずは無料見積もりを。</p>
+						<a href="https://px.a8.net/svt/ejp?a8mat=4B3MEP+BRWPT6+39GM+HV7V6" rel="nofollow" target="_blank" class="affiliate-btn btn-primary">
+							今すぐシロアリ110番に無料相談する →
+						</a>
+						<img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4B3MEP+BRWPT6+39GM+HV7V6" alt="" />
+						<a href="https://px.a8.net/svt/ejp?a8mat=4B3MEP+BRBA7E+39GM+5AIXAQ" rel="nofollow" target="_blank" class="affiliate-btn btn-secondary">
+							害虫駆除110番でも相談する →
+						</a>
+						<img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B3MEP+BRBA7E+39GM+5AIXAQ" alt="" />
+					</div>
+				) : (
+					<div class="affiliate-box">
+						<p class="affiliate-lead">🔍 すぐに業者を呼びたい方はこちら。24時間365日対応。</p>
+						<a href="https://px.a8.net/svt/ejp?a8mat=4B3MEP+BRBA7E+39GM+5AIXAQ" rel="nofollow" target="_blank" class="affiliate-btn btn-primary">
+							今すぐ害虫駆除110番に無料相談する →
+						</a>
+						<img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B3MEP+BRBA7E+39GM+5AIXAQ" alt="" />
+						<a href="https://px.a8.net/svt/ejp?a8mat=4B3MEP+BQPULM+36X8+HV7V6" rel="nofollow" target="_blank" class="affiliate-btn btn-secondary">
+							害虫駆除屋でも見積もりを取る →
+						</a>
+						<img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=4B3MEP+BQPULM+36X8+HV7V6" alt="" />
+					</div>
+				)}
+
 				<div class="author-box">
 					<div class="author-icon">🏠</div>
 					<div>

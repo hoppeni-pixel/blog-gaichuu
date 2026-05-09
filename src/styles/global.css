@@ -687,3 +687,50 @@ li {
 	white-space: nowrap;
 	border: 0;
 }
+
+/* ===== アフィリエイトCTA ===== */
+.affiliate-box {
+	background: #f8f9fa;
+	border: 2px solid #e8a000;
+	border-radius: 12px;
+	padding: 1.5em;
+	margin: 2em 0;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 0.8em;
+}
+.affiliate-lead {
+	font-size: 1em;
+	font-weight: 700;
+	color: #333;
+	margin: 0 0 0.4em;
+}
+.affiliate-btn {
+	display: block;
+	padding: 0.9em 1.2em;
+	border-radius: 8px;
+	font-weight: 700;
+	font-size: 1em;
+	text-decoration: none;
+	transition: opacity 0.2s;
+}
+.affiliate-btn:hover { opacity: 0.85; text-decoration: none; }
+.btn-primary {
+	background: #e8a000;
+	color: #fff;
+	font-size: 1.05em;
+}
+.btn-secondary {
+	background: #fff;
+	color: #e8a000;
+	border: 2px solid #e8a000;
+}
+.affiliate-inline {
+	color: #1a6aba;
+	text-decoration: underline;
+	font-weight: 600;
+}
+@media (max-width: 640px) {
+	.affiliate-btn { font-size: 0.95em; padding: 0.8em 1em; }
+}
