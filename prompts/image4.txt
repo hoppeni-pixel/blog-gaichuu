@@ -1,0 +1,28 @@
+Create a wide infographic (1792x1024px). Flat design. Warm cream background (#fff8f0).
+
+TOP: Full-width bold red banner (#cc0000) with white Japanese text: 「優良業者を見分ける3つのポイント」
+
+CENTER: Vertical 3-step flowchart connected by dark gray downward arrows:
+
+STEP 1 (light green rounded box, green border):
+- Magnifying glass icon + green circle badge 「1」
+- Bold text: 「無料調査・見積もりを実施している」
+- Sub text: 「調査前に費用を請求する業者は要注意」
+
+↓ dark arrow
+
+STEP 2 (light blue rounded box, blue border):
+- Document icon + blue circle badge 「2」
+- Bold text: 「公益社団法人日本しろあり対策協会の認定業者」
+- Sub text: 「資格保有の有無を必ず確認する」
+
+↓ dark arrow
+
+STEP 3 (light purple rounded box, purple border):
+- Shield icon + purple circle badge 「3」
+- Bold text: 「5年以上の保証書を発行してくれる」
+- Sub text: 「保証内容と再施工条件を事前に確認」
+
+BOTTOM RIGHT: Yellow callout box with red bold text: 「必ず3社以上から相見積もりを取ること」
+
+All Japanese text must be perfectly and clearly rendered. Flat vector illustration style.

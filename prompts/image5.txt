@@ -1,0 +1,29 @@
+Create a wide infographic (1792x1024px). Flat design. Warm cream background (#fff8f0).
+
+TOP: Full-width bold red banner (#cc0000) with white Japanese text: 「要注意！悪徳業者の典型的な手口」
+
+CENTER: A 2x2 grid of warning cards, each with a red warning icon:
+
+Card 1 (light red/pink background #ffebee, red border):
+- Warning icon
+- Bold text: 「突然の訪問販売」
+- Sub text: 「"今日だけ特別価格"は詐欺の定番」
+
+Card 2 (light red/pink background #ffebee, red border):
+- Warning icon
+- Bold text: 「調査前に高額請求」
+- Sub text: 「正規業者は調査・見積もりが無料」
+
+Card 3 (light red/pink background #ffebee, red border):
+- Warning icon
+- Bold text: 「保証書を発行しない」
+- Sub text: 「施工後のトラブルに対応しない」
+
+Card 4 (light red/pink background #ffebee, red border):
+- Warning icon
+- Bold text: 「極端に安い・高い見積もり」
+- Sub text: 「相場（1,500〜3,000円/坪）から大幅に外れる」
+
+BOTTOM CENTER: Yellow callout box with red bold text: 「断るときは"検討します"でOK。即決は絶対NG」
+
+All Japanese characters must be rendered perfectly and clearly. Flat design, vector style.

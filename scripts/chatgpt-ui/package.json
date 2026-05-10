@@ -1,0 +1,12 @@
+{
+  "name": "chatgpt-image-gen",
+  "version": "1.0.0",
+  "description": "ChatGPT UIを自動操作してブログ用アイキャッチを生成",
+  "main": "generate-chatgpt-ui.js",
+  "scripts": {
+    "start": "node generate-chatgpt-ui.js"
+  },
+  "dependencies": {
+    "playwright": "^1.44.0"
+  }
+}

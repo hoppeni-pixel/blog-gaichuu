@@ -1,0 +1,16 @@
+Create a wide infographic image (1792x1024px). Flat design. Warm cream background (#fff8f0).
+
+TOP: Full-width bold red banner (#cc0000) with large white Japanese text: 「シロアリ駆除の費用相場」
+
+CENTER LEFT: A modern Japanese two-story house illustration (contemporary style, white walls, simple sloped roof — NOT traditional old Japanese style). Show small white termite silhouettes crawling near the foundation.
+
+CENTER RIGHT: A large rounded yellow box (#fff59d, border #f9a825) containing:
+- Large bold text: 「¥ 30,000〜150,000円」
+- Smaller text below: 「一軒家の相場（広さ・工法により変動）」
+
+BOTTOM: Three small icon badges in a row:
+- Shield icon + 「保証あり」
+- Worker icon + 「業者比較」
+- Clipboard icon + 「無料調査」
+
+Clean flat vector style. Modern, professional. All Japanese characters must be rendered perfectly and clearly. No text distortion.

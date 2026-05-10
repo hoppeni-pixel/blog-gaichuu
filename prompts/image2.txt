@@ -1,0 +1,14 @@
+Create a wide infographic (1792x1024px). Flat design. Warm cream background (#fff8f0).
+
+TOP: Full-width bold red banner (#cc0000) with white Japanese text: 「坪数別・シロアリ駆除の費用目安」
+
+CENTER: A vertical table with 4 rows, each as a colored rounded rectangle with a small house icon on the left and price in bold on the right:
+
+Row 1 (light green #e8f5e9): 「20坪以下（約66㎡）」→「30,000〜60,000円」
+Row 2 (light blue #e3f2fd): 「30坪（約100㎡）」→「50,000〜90,000円」
+Row 3 (light orange #fff3e0): 「40坪（約132㎡）」→「70,000〜110,000円」
+Row 4 (light purple #f3e5f5): 「50坪以上（約165㎡）」→「100,000〜150,000円」
+
+BOTTOM RIGHT: Yellow callout box with red bold text: 「坪単価の目安：1,500〜3,000円」
+
+All Japanese text must be clean, clear, and perfectly rendered. Flat vector style.

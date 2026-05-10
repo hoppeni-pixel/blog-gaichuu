@@ -1,0 +1,19 @@
+Create a wide infographic (1792x1024px). Flat design. Warm cream background (#fff8f0).
+
+TOP: Full-width bold red banner (#cc0000) with white Japanese text: 「工法別・費用と特徴の比較」
+
+CENTER: Two large side-by-side rounded rectangle boxes:
+
+LEFT BOX (light blue border #1976d2, light blue fill #e3f2fd):
+- Title badge (blue circle): 「バリア工法」
+- Spray bottle icon
+- Bullet points: 「費用：安い（1,500円/坪〜）」「効果：即効性あり」「期間：5年保証が多い」「特徴：薬剤を土壌に注入」
+
+RIGHT BOX (light green border #388e3c, light green fill #e8f5e9):
+- Title badge (green circle): 「ベイト工法」
+- Bait trap icon
+- Bullet points: 「費用：高め（3,000円/坪〜）」「効果：巣ごと駆除」「期間：継続モニタリング」「特徴：毒エサで巣を壊滅」
+
+BOTTOM CENTER: Yellow callout box: 「迷ったらバリア工法が費用を抑えやすい」
+
+All Japanese must be perfectly rendered. Clean flat vector style.
